@@ -1,0 +1,59 @@
+# Housing MLOps Project Configuration
+
+# Project Information
+project:
+  name: "housing-mlops"
+  version: "1.0.0"
+  description: "California Housing Price Prediction MLOps Pipeline"
+
+# Data Configuration
+data:
+  raw_data_path: "data/raw/"
+  processed_data_path: "data/processed/"
+  validation_data_path: "data/validation/"
+  
+  # California Housing Dataset settings
+  dataset:
+    name: "california_housing"
+    test_size: 0.2
+    random_state: 42
+    target_column: "target"
+
+# Model Configuration
+model:
+  # Supported models for training
+  algorithms:
+    - "linear_regression"
+    - "random_forest"
+  
+  # Model storage
+  artifacts_path: "models/"
+  
+  # Random Forest parameters
+  random_forest:
+    n_estimators: 100
+    max_depth: 10
+    random_state: 42
+  
+  # Linear Regression parameters
+  linear_regression:
+    fit_intercept: true
+
+# MLflow Configuration
+mlflow:
+  tracking_uri: "sqlite:///mlflow.db"
+  experiment_name: "housing_price_prediction"
+  model_registry_name: "housing_model"
+  
+# API Configuration
+api:
+  host: "127.0.0.1"
+  port: 8000
+  title: "Housing Price Prediction API"
+  description: "MLOps API for predicting California housing prices"
+  version: "1.0.0"
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
