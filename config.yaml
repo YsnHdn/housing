@@ -41,7 +41,7 @@ model:
 
 # MLflow Configuration
 mlflow:
-  tracking_uri: "sqlite:///mlflow.db"
+  tracking_uri: "./mlruns"
   experiment_name: "housing_price_prediction"
   model_registry_name: "housing_model"
   
